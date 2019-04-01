@@ -103,15 +103,14 @@ literal:
     | CHAR_LIT
     | NIL ;
 INT_LIT:
-        DIGIT+
-        | HEX_LIT
+         HEX_LIT
         | DEC_LIT
         | OCT_LIT
         | BIN_LIT ;
 HEX_LIT : '0' ('x' | 'X' ) HEXDIGIT+ ( '_' HEXDIGIT )* ;
 DEC_LIT : DIGIT+ ( '_' DIGIT+ )* ;
 OCT_LIT : '0' 'o' OCTDIGIT+ ( '_' OCTDIGIT )* ;
-BIN_LIT : '0' ('b' | 'B' )  ( (BINDIGIT ( '_' BINDIGIT+ )*) | BINDIGIT+ ) ;
+BIN_LIT : '0' ('b' | 'B' ) BINDIGIT+ ( '_' BINDIGIT+ )*  ;
 INT8_LIT: INT_LIT '\'' ('i' | 'I') '8' ;
 INT16_LIT: INT_LIT '\'' ('i' | 'I') '16' ;
 INT32_LIT: INT_LIT '\'' ('i' | 'I') '32' ;
@@ -121,7 +120,7 @@ UINT8_LIT: UINT_LIT '8' ;
 UINT16_LIT: UINT_LIT '16' ;
 UINT32_LIT: UINT_LIT '32' ;
 UINT64_LIT: UINT_LIT '64' ;
-FLOAT_LIT: (DIGIT ('_' DIGIT)* (('.' DIGIT+ ('_' DIGIT)* EXP?) |EXP)) | (DIGIT+ '.' DIGIT+);
+FLOAT_LIT: DIGIT+ ('_' DIGIT)* (('.' DIGIT+ ('_' DIGIT)* EXP?) |EXP);
 FLOAT32_LIT: HEX_LIT '\'' FLOAT32_SUFFIX
             | (FLOAT_LIT | DEC_LIT | OCT_LIT | BIN_LIT) '\'' FLOAT32_SUFFIX ;
 FLOAT32_SUFFIX:  ('f' | 'F') '32' ;
