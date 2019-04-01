@@ -1,3 +1,4 @@
+# antlr milestone_1.g4 -Dlanguage=Python3
 import argparse
 from antlr4 import *
 from milestone_1Lexer import milestone_1Lexer
