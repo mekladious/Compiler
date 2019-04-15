@@ -113,3 +113,13 @@ venv.bak/
 /milestone_2Parser.py
 
 /milestone_2_result.txt
+
+/milestone_1.interp
+/milestone_1.tokens
+/milestone_1Lexer.py
+/milestone_1Lexer.interp
+/milestone_1Lexer.tokens
+/milestone_1Listener.py
+/milestone_1Parser.py
+
+/milestone_1_result.txt
