@@ -27,7 +27,7 @@ def main():
 
     output_file = open("milestone_2_result.txt", "w+")
     while not token.type == Token.EOF:
-        if get_token_type(token)!="NONE":
+        if str(token.type)!="NONE":
             output_file.write(token_dict[str(token.type)] + ' ' +  token.text + '\n')
             print(token_dict[str(token.type)], token.text)
         token = lexer.nextToken()

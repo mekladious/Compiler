@@ -1,7 +1,7 @@
 grammar milestone_2;
 
-SPACE: ' ';
-NEWLINE: [\r\n]+;
+SPACE: ' ' -> skip;
+NEWLINE: [\r\n]+ -> skip;
 
 NOT_INDENT: (INDENT (SPACE|SPACE SPACE|SPACE SPACE SPACE) ) -> skip;
 INDENT: '    '+ ;
@@ -170,7 +170,7 @@ WHEN: 'when' ;
 WHILE: 'while' ;
 XOR: 'xor' ;
 YIELD: 'yield' ;
-IDENTIFIER : LETTER+ ( '_'* (LETTER | DIGIT) )*;
+IDENTIFIER : LETTER+ ( '_'?(LETTER | DIGIT) )*;
 LETTER: [a-zA-Z] ;
 DIGIT: [0-9] ;
 LITERAL: 
@@ -243,4 +243,4 @@ RSTR_LIT: 'r' '"' ( '\\' [btnfr"'\\] | ~[\r\n\\"] )* '"';
 GENERALIZED_STR_LIT: IDENTIFIER STR_LIT;
 GENERALIZED_TRIPLESTR_LIT: IDENTIFIER TRIPLESTR_LIT;
 
-ANY: .;
+ANY: . -> skip;
