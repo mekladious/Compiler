@@ -104,12 +104,12 @@ venv.bak/
 .mypy_cache/
 
 # antlr
-/milestone_1.interp
-/milestone_1.tokens
-/milestone_1Lexer.py
-/milestone_1Lexer.interp
-/milestone_1Lexer.tokens
-/milestone_1Listener.py
-/milestone_1Parser.py
+/milestone_2.interp
+/milestone_2.tokens
+/milestone_2Lexer.py
+/milestone_2Lexer.interp
+/milestone_2Lexer.tokens
+/milestone_2Listener.py
+/milestone_2Parser.py
 
-/milestone_1_result.txt
+/milestone_2_result.txt

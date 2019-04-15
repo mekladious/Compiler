@@ -1,4 +1,4 @@
-grammar milestone_1;
+grammar milestone_2;
 
 SPACE: ' ';
 NEWLINE: [\r\n]+;

@@ -1,9 +1,9 @@
-# antlr milestone_1.g4 -Dlanguage=Python3
+# antlr milestone_2.g4 -Dlanguage=Python3
 import argparse
 from antlr4 import *
-from milestone_1Lexer import milestone_1Lexer
-from milestone_1Listener import milestone_1Listener
-from milestone_1Parser import milestone_1Parser
+from milestone_2Lexer import milestone_2Lexer
+from milestone_2Listener import milestone_2Listener
+from milestone_2Parser import milestone_2Parser
 from antlr4.tree.Trees import Trees
 
 def main():
@@ -12,7 +12,7 @@ def main():
     input_stream = InputStream(lines)
     lexer = milestone_1Lexer(input_stream)
 
-    with open("milestone_1.tokens", "r") as file:
+    with open("milestone_2.tokens", "r") as file:
         lines = file.readlines()
     lines.reverse()
     token_dict = dict((line.strip().split('=')[1], line.split('=')[0]) for line in lines)
@@ -25,7 +25,7 @@ def main():
 
     token = lexer.nextToken()
 
-    output_file = open("milestone_1_result.txt", "w+")
+    output_file = open("milestone_2_result.txt", "w+")
     while not token.type == Token.EOF:
         if get_token_type(token)!="NONE":
             output_file.write(token_dict[str(token.type)] + ' ' +  token.text + '\n')
